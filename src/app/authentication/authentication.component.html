@@ -1,0 +1,51 @@
+<div class="container">
+    <ng-container *ngIf="loginPage; then loginRef else registerRef">
+    </ng-container>
+</div>
+<ng-template #loginRef>
+    <div class="card p-3" style="width: 500px;height: 300px;">
+        <div class="card-body my-auto">
+            <form [formGroup]="loginForm">
+                <div class="mb-3">
+                    <input type="text" formControlName="username" class="form-control" placeholder="Username"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="mb-5">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password"
+                        aria-label="Password" aria-describedby="basic-addon1">
+                </div>
+                <div class="mb-3">
+                    <button type="button" (click)="submitLoginForm()"
+                        class="btn btn-primary btn-lg btn-block">Login</button>
+                </div>
+                <span class="link" (click)="loginPage = !loginPage">
+                    Register?
+                </span>
+            </form>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #registerRef>
+    <div class="card p-3" style="width: 500px;height: 300px;">
+        <div class="card-body my-auto">
+            <form [formGroup]="registerForm">
+                <div class="mb-3">
+                    <input type="text" formControlName="username" class="form-control" placeholder="Username"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="mb-5">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password"
+                        aria-label="Password" aria-describedby="basic-addon1">
+                </div>
+                <div class="mb-3">
+                    <button type="button" (click)="submitRegisterForm()"
+                        class="btn btn-primary btn-lg btn-block">Register</button>
+                </div>
+                <span class="link" (click)="loginPage = !loginPage">
+                    Login?
+                </span>
+            </form>
+        </div>
+    </div>
+</ng-template>

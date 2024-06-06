@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="p-2 logout">
+        <input style="width: 100px;cursor: pointer;" [(colorPicker)]="color" [cpOutputFormat]="'hex'"
+            [style.background]="color" (colorPickerChange)="changeColor($event)" />
+        <button class="btn btn-primary" (click)="asyncErase()">Erase</button>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+        <button class="btn btn-primary" (click)="logout()">Logout</button>
+    </div>
+    <hr />
+    <canvas class="convas" #canvas></canvas>
+</div>
